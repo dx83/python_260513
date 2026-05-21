@@ -5,7 +5,7 @@ from app.database import board, get_next_sequence
 from datetime import datetime
 from bson import ObjectId
 
-router = APIRouter(prefix="/api/board")
+router = APIRouter(prefix="/api/board", tags=["board"])
 
 # 게시글 상세 => 127.0.0.1:8000/api/board/detail?no=1
 @router.get("/detail")

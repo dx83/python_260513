@@ -1,0 +1,11 @@
+-- npm install
+fastapi
+uvicorn
+python-multipart
+motor
+passlib[bcrypt]
+fastapi-jwt
+python-jose
+
+-- 서버 구동
+uvicorn app.main:app --reload --host 0.0.0.0

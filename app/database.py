@@ -11,6 +11,8 @@ db = client["db1"]
 
 board = db["board"]
 counter = db["counter"]
+item = db['item']
+
 customer = db["customer"]
 
 
