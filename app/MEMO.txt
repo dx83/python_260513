@@ -4,8 +4,10 @@ uvicorn
 python-multipart
 motor
 passlib[bcrypt]
+passlib[argon2] // 이게 더 강력한 암호화
 fastapi-jwt
 python-jose
 
 -- 서버 구동
 uvicorn app.main:app --reload --host 0.0.0.0
+--port 8000 포트는 설정 안할시 8000번이 디폴트

@@ -25,6 +25,7 @@ async def get_item_list(page: int = 1, limit: int = 10):
         projection = {
             "_id": 0,
             "filename": 0,
+            "filedata": 0,
             "filetype": 0,
             "filesize": 0,
         }  # 제거할 컬럼
@@ -35,7 +36,7 @@ async def get_item_list(page: int = 1, limit: int = 10):
 
         # 반복문을 사용해서 새로운 imgurl 생성
         for doc in t1:
-            doc["iimgurl"] = f"/api/item/image?no={doc['no']}"
+            doc["imgurl"] = f"/api/item/image?no={doc['no']}"
 
         return {"list": t1, "total": total}
     except Exception as e:
@@ -49,6 +50,7 @@ async def get_image1(no: int):
         query = {"no": no}
         projection = {"filename": 1, "filetype": 1}
         t1 = await item.find_one(query, projection)
+        print(no)
         if t1:
             return FileResponse(path=t1["filename"], media_type=t1["filetype"])
         else:

@@ -1,13 +1,14 @@
 # 파일명 : app / main.py
 
 from fastapi import FastAPI
-from app.routers import board, member, item, customer
+from app.routers import board, member, item, fish, customer
 
 app = FastAPI()
 
 app.include_router(board.router)
 app.include_router(member.router)
 app.include_router(item.router)
+app.include_router(fish.router)
 
 app.include_router(customer.router) # 개인실습
 
