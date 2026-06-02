@@ -33,5 +33,3 @@ if uploaded_file is not None:
     st.write("파일명:", uploaded_file.name)
     st.write("파일 타입:", uploaded_file.type)
     st.write("파일 크기:", uploaded_file.size, "byte")
-
-    
